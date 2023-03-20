@@ -66,6 +66,7 @@ nav {
 
 .logo {
     display: flex;
+    text-align: center;
     align-items: center;
     width: 300px;
     margin-left: 3rem;
@@ -87,7 +88,7 @@ nav {
     background-color: #222222;
     border: 1px solid #fff;
     justify-content: center;
-    width: 200px;
+    width: 300px;
     height: 50px;
     border-radius: 2rem;
     align-items: center;
@@ -101,5 +102,15 @@ nav {
     color: rgb(255, 255, 255);
     font-size: 18px;
     text-align: center;
+}
+
+.forerkort p:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1155px) {
+  .logo h1 {
+    font-size: 24px;
+  }
 }
 </style>

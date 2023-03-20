@@ -40,6 +40,7 @@ footer {
 
 .text {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     color: aliceblue;
@@ -48,9 +49,10 @@ footer {
 .column {
     display: flex;
     font-size: 14px;
+    width: 200px;
     flex-direction: column;
     margin: 0 8rem 0 8rem;
-} 
+}
 
 .personvern {
     line-height: 2rem;
@@ -60,4 +62,19 @@ footer {
     color: #FFA500;
 }
 
+@media only screen and (max-width: 950px) {
+    footer {
+        overflow-x: hidden;
+    }
+    .text {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    .text > .adresse {
+        margin-left: 2rem;
+    }
+    .column {
+        margin: 0;
+    }
+}
 </style>
