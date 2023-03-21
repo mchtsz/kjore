@@ -35,13 +35,15 @@ footer {
     background-color: #222222;
     font-family: 'Noto Sans', sans-serif;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-    padding: 1.2rem 0;
+    width: 100%;
+    padding: 2rem 0;
 }
 
 .text {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    user-select: none;
     align-items: center;
     color: aliceblue;
 }
@@ -60,6 +62,7 @@ footer {
 
 .orange {
     color: #FFA500;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 950px) {

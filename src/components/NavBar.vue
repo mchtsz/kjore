@@ -19,6 +19,14 @@ import "./icons/logo.svg"
                     <li class="list"><RouterLink to="/om-oss">Om oss</RouterLink></li>
                 </ul>
 
+                <div class="meny">Meny
+                    <div class="meny-knapp">
+                        <div class="meny-linje"></div>
+                        <div class="meny-linje"></div>
+                        <div class="meny-linje"></div>
+                    </div>
+                </div>
+
 
                 <div class="forerkort">
                     <p>Ta førerkort</p>
@@ -50,7 +58,21 @@ nav {
 .content {
     display: flex;
 }
+.meny {
+    display: none;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
 
+.meny-linje {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
 .list {
     list-style: none;
     font-size: 20px;
