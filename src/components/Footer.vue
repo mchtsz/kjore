@@ -33,10 +33,13 @@ import { RouterLink } from 'vue-router'
 <style scoped>
 footer {
     background-color: #222222;
-    font-family: 'Noto Sans', sans-serif;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
     width: 100%;
     padding: 2rem 0;
+}
+
+p {
+  color: var(--text);
 }
 
 .text {
@@ -45,7 +48,6 @@ footer {
     justify-content: space-between;
     user-select: none;
     align-items: center;
-    color: aliceblue;
 }
 
 .column {
@@ -61,7 +63,7 @@ footer {
 }
 
 .orange {
-    color: #FFA500;
+    color: var(--orange);
     cursor: pointer;
 }
 

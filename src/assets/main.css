@@ -1,1 +1,33 @@
-@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+  --color: #f99417;
+  --orange: #ffa500;
+  --text: #ffffff;
+  --h3: aliceblue;
+  --content: #000;
+  --contrast: #222222;
+  --padding: 3rem;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: overlay;
+  font-family: 'Noto Sans', sans-serif;
+  padding: 0;
+}
+
+p {
+  color: var(--content);
+}
+
+h3 {
+  color: var(--h3);
+}
