@@ -1,10 +1,28 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import "./icons/logo.svg"
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    console.log("test")
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (e) {
+    if (!e.target.matches('.dropbtn')) {
+        let myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+    }
+}
+
 </script>
 
 <template>
-    <nav>
+    <nav id="myNav">
         <div class="content">
             <div class="logo">
                 <RouterLink to="/">
@@ -28,13 +46,28 @@ import "./icons/logo.svg"
                 </li>
             </ul>
 
-            <div class="meny">
+            <div class="meny dropdown">
                 <p>Meny</p>
 
-                <div class="meny-knapp">
+                <div class="meny-knapp dropbtn" @click="myFunction()">
                     <div class="meny-linje"></div>
                     <div class="meny-linje"></div>
                     <div class="meny-linje"></div>
+                </div>
+
+                <div class="dropdown-content" id="myDropdown">
+                    <li>
+                        <RouterLink to="/">Hjem</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/kurs">Kurs</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/pris">Priser</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/om-oss">Om oss</RouterLink>
+                    </li>
                 </div>
             </div>
 
@@ -55,7 +88,51 @@ nav {
 }
 
 p {
-  color: var(--text);
+    color: var(--text);
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn,
+.dropbtn:focus {
+    background-color: rgba(255, 255, 255, 0.042);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 9.4%;
+    right: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    background-color: var(--contrast);
+    min-width: 150px;
+    z-index: 1;
+}
+
+.center {
+    text-align: center;
+}
+
+.dropdown-content li {
+    float: none;
+    color: rgb(255, 255, 255);
+    list-style-type: none;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.dropdown-content li:hover {
+    background-color: #454545;
+}
+
+.show {
+    display: block;
 }
 
 .nav-list {
@@ -75,6 +152,7 @@ p {
 .meny {
     display: none;
     margin-right: 2rem;
+    gap: 6px;
     align-items: center;
     font-size: 20px;
     color: white;
@@ -82,8 +160,8 @@ p {
 }
 
 .meny-linje {
-    width: 30px;
-    height: 4px;
+    width: 25px;
+    height: 3px;
     background-color: white;
     margin: 5px;
     transition: all 0.3s ease;

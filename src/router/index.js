@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Kurs from '../views/Kurs.vue'
-import Pris from '../views/Pris.vue'
-import Om from '../views/Om.vue'
+import Home from '../pages/Home.vue'
+import Kurs from '../pages/Kurs.vue'
+import Pris from '../pages/Pris.vue'
+import Om from '../pages/Om.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
