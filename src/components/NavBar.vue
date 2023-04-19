@@ -71,8 +71,8 @@ window.onclick = function (e) {
                 </div>
             </div>
 
-            <div class="forerkort">
-                <p>Ta førerkort</p>
+            <div class="min-side">
+                <p>Min side</p>
             </div>
         </div>
     </nav>
@@ -204,7 +204,7 @@ p {
     color: var(--color);
 }
 
-.forerkort {
+.min-side {
     display: flex;
     background-color: #222222;
     border: 1px solid #fff;
@@ -219,13 +219,13 @@ p {
     cursor: pointer;
 }
 
-.forerkort p {
+.min-side p {
     color: rgb(255, 255, 255);
     font-size: 18px;
     text-align: center;
 }
 
-.forerkort p:hover {
+.min-side p:hover {
     text-decoration: underline;
 }
 
@@ -241,7 +241,7 @@ p {
         display: none;
     }
 
-    .forerkort {
+    .min-side {
         display: none;
     }
 
