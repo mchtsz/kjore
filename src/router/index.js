@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Kurs from '../pages/Kurs.vue'
-import Pris from '../pages/Pris.vue'
+import Priser from '../pages/Priser.vue'
 import Om from '../pages/Om.vue'
 
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       component: Kurs
     },
     {
-      path: '/pris',
-      name: 'pris',
-      component: Pris
+      path: '/priser',
+      name: 'priser',
+      component: Priser
     },
     {
       path: '/om-oss',
