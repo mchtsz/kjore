@@ -63,7 +63,7 @@ window.onclick = function (e) {
                         <RouterLink to="/kurs">Kurs</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/pris">Priser</RouterLink>
+                        <RouterLink to="/priser">Priser</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/om-oss">Om oss</RouterLink>
