@@ -31,4 +31,14 @@ main {
   align-items: center;
   width: 50%;
 }
+
+.right img {
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 756px) {
+    .right img{
+        display: none;
+    }
+  }
 </style>

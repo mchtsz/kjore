@@ -138,9 +138,10 @@ p {
 .nav-list {
     display: flex;
     width: 100%;
-    justify-content: center;
+    /*  justiy content flex-end / center */
+    justify-content: flex-end;
     align-items: center;
-    margin: 0;
+    margin: 0 6rem 0 0;
     padding: 0;
     gap: 2rem;
 }
@@ -205,7 +206,8 @@ p {
 }
 
 .min-side {
-    display: flex;
+    /* Display flex // display none */
+    display: none;
     background-color: #222222;
     border: 1px solid #fff;
     justify-content: center;
