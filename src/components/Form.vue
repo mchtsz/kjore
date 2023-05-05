@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { collection, addDoc } from "firebase/firestore";
 
 const driverClass = [
     "Bil (B)",
