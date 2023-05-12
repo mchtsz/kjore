@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { addDoc, doc, collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import db from '../firebase';
 
 const UserRef = collection(db, "users");
