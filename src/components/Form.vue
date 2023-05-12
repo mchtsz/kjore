@@ -1,12 +1,17 @@
 <script setup>
 import { ref } from 'vue';
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc, doc, collection } from "firebase/firestore";
+import db from '../firebase';
+
+const UserRef = collection(db, "users");
 
 const driverClass = [
     "Bil (B)",
     "Moped (AM146)",
     "Motorsykkel (A1)",
 ]
+
+const send = ref(false);
 
 const form = ref({
     name: "",
@@ -18,11 +23,20 @@ const form = ref({
     adresse: "",
     kommentar: "",
 })
+
+async function submit() {
+    await addDoc(UserRef, form.value)
+
+    send.value = true;
+    console.log("Form submitted");
+}
+
 </script>
 
 <template>
     <div class="form_container">
         <h1>Bestill kjøretime</h1>
+        <hr/>
         <div class="row">
             <input v-model="form.name" placeholder="Fornavn">
 
@@ -31,13 +45,13 @@ const form = ref({
         <div class="row">
             <input v-model="form.fodselsdato" type="date">
 
-            <input v-model="form.telefon" placeholder="Telefon nummer" type="number">
+            <input v-model=" form.telefon" placeholder="Telefonnummer" type="number" required>
         </div>
         <div class="row">
             <input v-model="form.epost" placeholder="E-post" type="email">
 
             <select v-model="form.forerkort" name="Førerkortklasse" id="forerkort">
-                <option value="">- Velg en førerkortklasse -</option>
+                <option value="">Velg førerkortklasse</option>
                 <option v-for="i in driverClass" :value="i">{{ i }}</option>
             </select>
         </div>
@@ -46,7 +60,8 @@ const form = ref({
 
             <input v-model="form.kommentar" placeholder="Kommentar">
         </div>
-        <button>Send inn</button>
+        <button :disabled="send" :class="{ 'button-active': !send, 'button-deactive': send }" @click="submit">Send
+            inn</button>
     </div>
 </template>
 
@@ -69,11 +84,9 @@ select {
 }
 
 button {
-    background-color: #FF9900;
-    border: 1px solid #FF9900;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    color: #fff;
+    color: var(--text);
     cursor: pointer;
     font: inherit;
     margin: 1rem 0;
@@ -81,7 +94,28 @@ button {
     width: 100%;
 }
 
+.form_container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(37, 37, 37);
+    margin-bottom: 4px;
+}
+
+.button-active {
+    background-color: var(--bcolor);
+    border: 1px solid var(--bcolor);
+}
+
+.button-deactive {
+    background-color: red;
+    border: 1px solid red;
+}
+
 input {
+    display: flex;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);

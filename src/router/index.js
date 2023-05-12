@@ -9,16 +9,6 @@ const router = createRouter({
       component: () => import('../pages/Home.vue')
     },
     {
-      path: '/kurs',
-      name: 'kurs',
-      component: () => import('../pages/Kurs.vue')
-    },
-    {
-      path: '/priser',
-      name: 'priser',
-      component: () => import('../pages/Priser.vue')
-    },
-    {
       path: '/om-oss',
       name: 'om-oss',
       component: () => import('../pages/Om.vue')

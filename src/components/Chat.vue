@@ -1,6 +1,6 @@
 <template>
     <div class="chat">
-        <img src="./icons/Chat.svg" alt="chat">
+        <img src="../images/Chat.svg" alt="chat">
     </div>
 </template>
 

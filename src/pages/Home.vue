@@ -1,6 +1,7 @@
 <script setup>
 import Chat from "../components/Chat.vue";
 import Form from "../components/Form.vue";
+import Kurs from "../components/Kurs.vue";
 </script>
 
 <template>
@@ -8,8 +9,12 @@ import Form from "../components/Form.vue";
     <div class="left">
       <Form />
     </div>
+    <div class="kurs-container">
+      <Kurs />
+    </div>
+
     <div class="right">
-      <img src="../components/icons/Car.svg" alt="car">
+      <img src="../images/Car.svg" alt="car">
     </div>
     <Chat />
   </main>
@@ -22,6 +27,11 @@ main {
   justify-content: space-between;
   width: 100%;
   margin: 1rem;
+  gap: 1rem;
+}
+
+.kurs-container {
+  margin: 0;
 }
 
 .right {
@@ -37,8 +47,8 @@ main {
 }
 
 @media only screen and (max-width: 756px) {
-    .right img{
-        display: none;
-    }
+  .right img {
+    display: none;
   }
+}
 </style>

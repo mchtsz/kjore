@@ -1,12 +1,11 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import "./icons/logo.svg"
+import "../images/logo.svg"
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
-    console.log("test")
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -36,12 +35,6 @@ window.onclick = function (e) {
                     <RouterLink to="/"><b>Hjem</b></RouterLink>
                 </li>
                 <li class="list">
-                    <RouterLink to="/kurs">Kurs</RouterLink>
-                </li>
-                <li class="list">
-                    <RouterLink to="/priser">Priser</RouterLink>
-                </li>
-                <li class="list">
                     <RouterLink to="/om-oss">Om oss</RouterLink>
                 </li>
             </ul>
@@ -58,12 +51,6 @@ window.onclick = function (e) {
                 <div class="dropdown-content" id="myDropdown">
                     <li>
                         <RouterLink to="/">Hjem</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/kurs">Kurs</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/priser">Priser</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/om-oss">Om oss</RouterLink>
