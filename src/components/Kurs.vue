@@ -21,11 +21,11 @@
 <template>
     <div class="container">
         <div class="tabell">
-            <h1>Timepris</h1>
+            <h1>Timepris pr time</h1>
             <hr/>
             <div class="kurs" v-for="kursItem of kurs">
                 <p>{{ kursItem.name }}</p>
-                <p>{{ kursItem.price }}kr pr time</p>
+                <p>{{ kursItem.price }}kr</p>
             </div>
         </div>
     </div>
@@ -57,5 +57,20 @@
     text-align: center;
     font-size: 24px;
     margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 756px) {
+    .tabell {
+        font-size: 16px;
+        margin: 6px;
+    }
+    .kurs {
+        padding: 0 2rem;
+        margin: 0.5rem 0;
+    }
+
+    .tabell h1 {
+        font-size: 18px;
+    }
 }
 </style>

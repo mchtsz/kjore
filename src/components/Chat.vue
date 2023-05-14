@@ -24,4 +24,10 @@
     margin: auto;
     width: 60px;
 }
+
+@media only screen and (max-width: 756px) {
+    .chat {
+        display: none;
+    }
+}
 </style>

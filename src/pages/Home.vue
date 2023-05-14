@@ -27,11 +27,26 @@ main {
   justify-content: space-between;
   width: 100%;
   margin: 1rem;
+  height: 90vh;
   gap: 1rem;
 }
 
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin-bottom: 6rem;
+  margin-left: 8rem;
+  width: 50%;
+}
+
 .kurs-container {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 17.5rem;
+  width: 50%;
 }
 
 .right {
@@ -49,6 +64,23 @@ main {
 @media only screen and (max-width: 756px) {
   .right img {
     display: none;
+  }
+
+  main {
+    flex-direction: column-reverse;
+    margin-left: 0;
+  }
+
+  .kurs-container {
+    width: 100%;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left {
+    margin: 0;
+    width: 100%;
   }
 }
 </style>

@@ -2,6 +2,7 @@
 const { image, name, description } = defineProps({
     image: String,
     name: String,
+    title: String,
     description: String
 })
 
@@ -12,6 +13,7 @@ const { image, name, description } = defineProps({
         <div class="card">
             <img :src="image" />
             <h3>{{ name }}</h3>
+            <h4>{{ title }}</h4>
             <p>{{ description }}</p>
         </div>
     </div>
@@ -43,9 +45,16 @@ const { image, name, description } = defineProps({
     font-size: 1.5rem;
 }
 
+.card h4 {
+    color: rgb(67, 67, 67);
+    font-size: 1rem;
+    text-decoration: dotted;  
+    margin: 0.7rem;
+}
+
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
 }

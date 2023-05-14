@@ -10,17 +10,20 @@ const list = [
     {
         image: "/src/images/mike.jpg",
         name: "Mikkel Tusen",
-        description: "Bil(B), & Motorsykkel (A1)"
+        title: "Administasjon og trafikklærer",
+        description: "Bil (B) & Motorsykkel (A1)"
     },
     {
         image: "/src/images/harvey.jpg",
         name: "Harald Spekk",
-        description: "Bil(B), Motorsykkel (A1), & Moped (AM146)",
+        title: "CEO & trafikklærer",
+        description: "Bil (B), Motorsykkel (A1) & Moped (AM146)",
     },
     {
         image: "/src/images/jan.jpg",
         name: "Jan Egil",
-        description: "Moped (AM146), & Bil(B)",
+        title: "Trafikklærer",
+        description: "Moped (AM146) & Bil (B)",
     },
 ]
 
@@ -41,7 +44,7 @@ async function sumbitQuestion() {
     <div class="container">
         <h2>Våre instruktører:</h2>
         <div class="instructors">
-            <Instructor v-for="i in list" :key="i.name" :image="i.image" :name="i.name" :description="i.description" />
+            <Instructor v-for="i in list" :key="i.name" :image="i.image" :name="i.name" :title="i.title" :description="i.description" />
         </div>
         <h2>Spørsmål?</h2>
         <p>Vi svarer så fort vi kan!</p>
@@ -74,6 +77,7 @@ async function sumbitQuestion() {
     width: 100%;
     justify-content: center;
     text-align: center;
+    margin: 2rem 0;
 }
 
 .container p {
@@ -85,6 +89,7 @@ async function sumbitQuestion() {
     flex-direction: column;
     gap: 1rem;
 }
+
 .column {
     display: flex;
     flex-direction: row;
@@ -116,7 +121,6 @@ async function sumbitQuestion() {
 
 .container h2 {
     text-align: center;
-    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -132,5 +136,15 @@ async function sumbitQuestion() {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 756px) {
+  .column {
+    display: flex;
+  }
+
+    .image-container img {
+        display: none;
+    }
 }
 </style>

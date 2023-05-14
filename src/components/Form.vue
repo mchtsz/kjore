@@ -132,4 +132,39 @@ input {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     padding: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .form_container {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        width: 300px;
+        margin: auto;
+    }
+
+    .form_container h1 {
+        font-size: 20px;
+    }
+
+    .select {
+        margin: 0.1rem 0;
+        padding: 0;
+        text-align: center;
+        width: 280px;
+    }
+
+    input {
+        margin: 0.1rem 0;
+        width: 280px;
+        text-align: center;
+    }
+}
 </style>

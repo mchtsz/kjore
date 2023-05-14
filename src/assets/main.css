@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  overflow: overlay;
+  overflow-x: hidden;
   font-family: 'Noto Sans', sans-serif;
   padding: 0;
 }

@@ -87,7 +87,7 @@ p {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 9.4%;
+    top: 7%;
     right: 0;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
     background-color: var(--contrast);
