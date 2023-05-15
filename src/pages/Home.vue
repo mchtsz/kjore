@@ -1,5 +1,4 @@
 <script setup>
-import Chat from "../components/Chat.vue";
 import Form from "../components/Form.vue";
 import Kurs from "../components/Kurs.vue";
 </script>
@@ -16,7 +15,6 @@ import Kurs from "../components/Kurs.vue";
     <div class="right">
       <img src="../images/Car.svg" alt="car">
     </div>
-    <Chat />
   </main>
 </template>
 
@@ -45,7 +43,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 17.5rem;
+  margin-bottom: 17rem;
   width: 50%;
 }
 

@@ -1,41 +1,42 @@
 <script lang="ts" setup>
-import { addDoc, collection } from "firebase/firestore";
+import { getDocs, addDoc, collection, doc } from "firebase/firestore";
 import Instructor from "../components/Instructor.vue";
 import { ref } from 'vue';
 import db from "../firebase";
 
 const UserRef = collection(db, "questions");
 
-const list = [
-    {
-        image: "/src/images/mike.jpg",
-        name: "Mikkel Tusen",
-        title: "Administasjon og trafikklærer",
-        description: "Bil (B) & Motorsykkel (A1)"
-    },
-    {
-        image: "/src/images/harvey.jpg",
-        name: "Harald Spekk",
-        title: "CEO & trafikklærer",
-        description: "Bil (B), Motorsykkel (A1) & Moped (AM146)",
-    },
-    {
-        image: "/src/images/jan.jpg",
-        name: "Jan Egil",
-        title: "Trafikklærer",
-        description: "Moped (AM146) & Bil (B)",
-    },
-]
+const list = ref<any[]>([
+])
+
+getDocs(collection(db, "instructors")).then((querySnapshot) => {
+    querySnapshot.docs.forEach(async (doc) => {
+        const data = doc.data();
+        list.value.push(data)
+
+        list.value = list.value.sort((a, b) => {
+            return a.sort - b.sort
+        })
+    })
+})
+
 
 const content = ref({
     name: "",
     email: "",
     question: "",
+
 })
 
 async function sumbitQuestion() {
     await addDoc(UserRef, content.value)
     console.log("Form submitted");
+
+    content.value = {
+        name: "",
+        email: "",
+        question: "",
+    }
 }
 
 </script>
@@ -44,7 +45,8 @@ async function sumbitQuestion() {
     <div class="container">
         <h2>Våre instruktører:</h2>
         <div class="instructors">
-            <Instructor v-for="i in list" :key="i.name" :image="i.image" :name="i.name" :title="i.title" :description="i.description" />
+            <Instructor v-for="i in list" :key="i.name" :image="i.image" :name="i.name" :title="i.title"
+                :description="i.description" />
         </div>
         <h2>Spørsmål?</h2>
         <p>Vi svarer så fort vi kan!</p>
@@ -66,7 +68,6 @@ async function sumbitQuestion() {
 </template>
 
 <style scoped>
-
 .image-container img {
     width: 300px;
     height: 300px;
@@ -139,9 +140,9 @@ async function sumbitQuestion() {
 }
 
 @media only screen and (max-width: 756px) {
-  .column {
-    display: flex;
-  }
+    .column {
+        display: flex;
+    }
 
     .image-container img {
         display: none;

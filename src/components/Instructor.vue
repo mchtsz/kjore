@@ -28,7 +28,7 @@ const { image, name, description } = defineProps({
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;

@@ -29,6 +29,17 @@ async function submit() {
 
     send.value = true;
     console.log("Form submitted");
+    
+    form.value = {
+        name: "",
+        lastname: "",
+        fodselsdato: "",
+        telefon: "",
+        epost: "",
+        forerkort: "",
+        adresse: "",
+        kommentar: "",
+    }
 }
 
 </script>

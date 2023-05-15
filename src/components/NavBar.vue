@@ -43,9 +43,9 @@ window.onclick = function (e) {
                 <p>Meny</p>
 
                 <div class="meny-knapp dropbtn" @click="myFunction()">
-                    <div class="meny-linje"></div>
-                    <div class="meny-linje"></div>
-                    <div class="meny-linje"></div>
+                    <div class="meny-linje dropbtn"></div>
+                    <div class="meny-linje dropbtn"></div>
+                    <div class="meny-linje dropbtn"></div>
                 </div>
 
                 <div class="dropdown-content" id="myDropdown">
@@ -79,7 +79,7 @@ p {
 }
 
 .navbar a:hover,
-.dropdown:hover .dropbtn,
+.dropdown:hover,
 .dropbtn:focus {
     background-color: rgba(255, 255, 255, 0.042);
 }
@@ -147,7 +147,7 @@ p {
     cursor: pointer;
 }
 
-.meny-linje {
+.meny-linje  {
     width: 25px;
     height: 3px;
     background-color: white;
