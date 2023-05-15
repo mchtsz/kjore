@@ -1,12 +1,11 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import "./icons/logo.svg"
+import "../images/logo.svg"
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
-    console.log("test")
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -36,12 +35,6 @@ window.onclick = function (e) {
                     <RouterLink to="/"><b>Hjem</b></RouterLink>
                 </li>
                 <li class="list">
-                    <RouterLink to="/kurs">Kurs</RouterLink>
-                </li>
-                <li class="list">
-                    <RouterLink to="/pris">Priser</RouterLink>
-                </li>
-                <li class="list">
                     <RouterLink to="/om-oss">Om oss</RouterLink>
                 </li>
             </ul>
@@ -50,20 +43,14 @@ window.onclick = function (e) {
                 <p>Meny</p>
 
                 <div class="meny-knapp dropbtn" @click="myFunction()">
-                    <div class="meny-linje"></div>
-                    <div class="meny-linje"></div>
-                    <div class="meny-linje"></div>
+                    <div class="meny-linje dropbtn"></div>
+                    <div class="meny-linje dropbtn"></div>
+                    <div class="meny-linje dropbtn"></div>
                 </div>
 
                 <div class="dropdown-content" id="myDropdown">
                     <li>
                         <RouterLink to="/">Hjem</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/kurs">Kurs</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/pris">Priser</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/om-oss">Om oss</RouterLink>
@@ -92,7 +79,7 @@ p {
 }
 
 .navbar a:hover,
-.dropdown:hover .dropbtn,
+.dropdown:hover,
 .dropbtn:focus {
     background-color: rgba(255, 255, 255, 0.042);
 }
@@ -100,7 +87,7 @@ p {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 9.4%;
+    top: 7%;
     right: 0;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
     background-color: var(--contrast);
@@ -138,9 +125,10 @@ p {
 .nav-list {
     display: flex;
     width: 100%;
-    justify-content: center;
+    /*  justiy content flex-end / center */
+    justify-content: flex-end;
     align-items: center;
-    margin: 0;
+    margin: 0 6rem 0 0;
     padding: 0;
     gap: 2rem;
 }
@@ -159,7 +147,7 @@ p {
     cursor: pointer;
 }
 
-.meny-linje {
+.meny-linje  {
     width: 25px;
     height: 3px;
     background-color: white;
@@ -205,7 +193,8 @@ p {
 }
 
 .min-side {
-    display: flex;
+    /* Display flex // display none */
+    display: none;
     background-color: #222222;
     border: 1px solid #fff;
     justify-content: center;

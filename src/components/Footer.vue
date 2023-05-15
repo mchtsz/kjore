@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
     <footer>
         <div class="container">
@@ -32,14 +28,16 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 footer {
+    position: relative;
     background-color: #222222;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
     width: 100%;
     padding: 2rem 0;
+    z-index: 1;
 }
 
 p {
-  color: var(--text);
+    color: var(--text);
 }
 
 .text {
@@ -71,13 +69,16 @@ p {
     footer {
         overflow-x: hidden;
     }
+
     .text {
         gap: 1rem;
         align-items: flex-start;
     }
-    .text > .adresse {
+
+    .text>.adresse {
         margin-left: 2rem;
     }
+
     .column {
         margin: 0;
     }
